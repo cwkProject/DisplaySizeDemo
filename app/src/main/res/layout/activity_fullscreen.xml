@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".FullscreenActivity">
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?colorPrimary"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="start"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back_24dp"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/border"
+            android:padding="4dp"
+            android:src="@drawable/ic_border_color_24dp"/>
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_mode_edit_24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宽度："
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/top_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="高度："
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/top_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:background="?colorAccent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_chat_36dp"/>
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/border"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_group_24dp"/>
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/border"
+                android:padding="4dp"
+                android:src="@drawable/ic_group_24dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.2"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="宽度："
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/left_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="高度："
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/left_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dp为屏幕物理尺寸单位=屏幕像素÷逻辑密度"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="示例图标："/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有边框为24dp图+4dp内边距(实际大小32dp)"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="无边框为36dp图"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设计规范中要求最小的触摸目标尺寸是48dp"/>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:columnCount="2"
+                android:useDefaultMargins="true">
+
+                <TextView android:text="屏幕逻辑密度："/>
+
+                <TextView android:id="@+id/screen_density"/>
+
+                <TextView android:text="屏幕宽度："/>
+
+                <TextView android:id="@+id/screen_width"/>
+
+                <TextView android:text="屏幕高度："/>
+
+                <TextView android:id="@+id/screen_height"/>
+
+                <TextView android:text="白板宽度："/>
+
+                <TextView android:id="@+id/main_width"/>
+
+                <TextView android:text="白板高度："/>
+
+                <TextView android:id="@+id/main_height"/>
+            </GridLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
