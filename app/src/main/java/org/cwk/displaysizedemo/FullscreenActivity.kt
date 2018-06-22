@@ -60,8 +60,10 @@ class FullscreenActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun onSizeChange() {
-        top_width.text = "${top_layout.width}px,${String.format("%.1f", top_layout.width / screenDensity)}dp"
-        top_height.text = "${top_layout.height}px,${String.format("%.1f", top_layout.height / screenDensity)}dp"
+        right_width.text = "${right_layout.width}px,${String.format("%.1f", right_layout.width /
+                screenDensity)}dp"
+        right_height.text = "${right_layout.height}px,${String.format("%.1f", right_layout.height /
+                screenDensity)}dp"
 
         left_width.text = "${left_layout.width}px\n${String.format("%.1f", left_layout.width / screenDensity)}dp"
         left_height.text = "${left_layout.height}px\n${String.format("%.1f", left_layout.height / screenDensity)}dp"
@@ -72,23 +74,27 @@ class FullscreenActivity : AppCompatActivity() {
 
     private fun onInitTouch() {
 
-        var topY = 0f
-        var topHeight = 0
-        top_layout.setOnTouchListener { v, event ->
+        var mainX = 0f
+        var mainWidth = 0
+        var minWidth = 0
+
+        main_layout.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    topY = event.y
-                    topHeight = top_layout.height
+                    mainX = event.x
+                    mainWidth = main_layout.width
+                    minWidth = right_layout.width
                 }
                 MotionEvent.ACTION_MOVE -> {
-                    val offset = event.y - topY
+                    val offset = event.x - mainX
 
-                    if (topHeight + offset < minSize) {
-                        top_layout.layoutParams.height = minSize
+                    if (minWidth - offset < minSize) {
+                        right_layout.layoutParams.width = minSize
                     } else {
-                        top_layout.layoutParams.height = topHeight + offset.toInt()
+                        main_layout.layoutParams.width = mainWidth + offset.toInt()
+                        right_layout.layoutParams.width = minWidth - offset.toInt()
                     }
-                    top_layout.requestLayout()
+                    main_layout.requestLayout()
                 }
             }
 
